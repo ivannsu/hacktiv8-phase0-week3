@@ -4,38 +4,46 @@ function dataHandling2(input) {
   input.splice(1, 1, 'Roman Alamsyah Elsharawy');
   input.splice(2, 1, 'Provinsi Bandar Lampung');
   input.splice(4, 0, 'Pria');
+  input.splice(5, 1, 'SMA Internasional Metro');
 
   console.log(input);
 
   var dateTime = input[3].split('/');
-  var month;
+  var dateTimeArray = [];
+  var dateTimeSorted;
+  var dateTimeJoined;
 
-  switch (parseInt(dateTime[1])) {
-    case 01:
+  for(var i = 0; i < dateTime.length; i++) {
+    var result = parseInt(dateTime[i]);
+    dateTimeArray.push(result);
+  }
+
+  switch (dateTimeArray[1]) {
+    case 1:
       month = 'Januari';
       break;
-    case 02:
+    case 2:
       month = 'Februari';
       break;
-    case 03:
+    case 3:
       month = 'Maret';
       break;
-    case 04:
+    case 4:
       month = 'April';
       break;
-    case 05:
+    case 5:
       month = 'Mei';
       break;
-    case 06:
+    case 6:
       month = 'Juni';
       break;
-    case 07:
+    case 7:
       month = 'Juli';
       break;
-    case 08:
+    case 8:
       month = 'Agustus';
       break;
-    case 09:
+    case 9:
       month = 'September';
       break;
     case 10:
@@ -51,13 +59,13 @@ function dataHandling2(input) {
   }
   console.log(month);
 
-  var newDateTime = dateTime.sort(function(val1, val2) {
-    return val1 > val2;
+  dateTimeResult = dateTimeArray.sort(function(val1, val2) {
+    return val1 < val2;
   });
-  var joinedDateTime = newDateTime.join('-');
+  console.log(dateTimeResult);
 
-  console.log(newDateTime);
-  console.log(joinedDateTime);
+  dateTimeJoined = dateTime.join('-');
+  console.log(dateTimeJoined);
 
   var max15char = input[1].slice(0, 15);
   console.log(max15char);
