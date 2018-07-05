@@ -5,9 +5,13 @@ var input = [
               ["0004", "Bintang Senjaya", "Martapura", "6/4/1970", "Berkebun"]
             ];
 
-for(var i = 0; i < input.length; i++) {
-  for(var j = 0; j < input[i].length; j++) {
-    console.log(input[i][j]);
+function dataHandling(data) {
+  for(var i = 0; i < data.length; i++) {
+    for(var j = 0; j < data[i].length; j++) {
+      console.log(data[i][j]);
+    }
+    console.log('');
   }
-  console.log('');
 }
+
+dataHandling(input);
