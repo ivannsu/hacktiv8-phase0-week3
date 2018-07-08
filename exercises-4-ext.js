@@ -29,28 +29,6 @@
   Roman Alamsyah
 */
 
-var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
-
-function dataHandling(input) {
-  // Output #1
-  console.log(updateData(input));
-
-  // Output #2
-  var date = input[3].split('/');
-  var month = monthConverter(date[1]);
-  console.log(month);
-
-  // Output #3
-  console.log(sortTheDate(date));
-
-  // Output #4
-  console.log(date.join('-'));
-
-  // Output #5
-  console.log(input[1].substr(0, 15));
-
-}
-
 function updateData(input) {
   input.splice(1, 1, 'Roman Alamsyah Elsharawy');
   input.splice(2, 1, 'Provinsi Bandar Lampung');
@@ -121,4 +99,25 @@ function monthConverter(input) {
   return month;
 }
 
+function dataHandling(input) {
+  // Output #1
+  console.log(updateData(input));
+
+  // Output #2
+  var date = input[3].split('/');
+  var month = monthConverter(date[1]);
+  console.log(month);
+
+  // Output #3
+  console.log(sortTheDate(date));
+
+  // Output #4
+  console.log(date.join('-'));
+
+  // Output #5
+  console.log(input[1].substr(0, 15));
+
+}
+
+var input = ["0001", "Roman Alamsyah ", "Bandar Lampung", "21/05/1989", "Membaca"];
 dataHandling(input);
