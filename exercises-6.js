@@ -1,29 +1,25 @@
-function reverseNumber(num) {
-  var numStr = num.toString();
-  var result = '';
+function showPalindrome(num) {
 
-  for(var i = numStr.length -1; i >= 0; i--) {
-    result += numStr[i];
-  }
-  return result;
-}
-
-function showPalindrome(num) { // Param: 117
-  var numResult = num; // 117
-
-  if(num < 10) { // 117 Not < 10 (FALSE)
-    numResult += 1;
-    return numResult + ' - Palindrome';
+  if(num < 10) {
+    num += 1;
+    return num;
 
   } else {
+    num += 1;
 
-    numResult += 1; // 117 + 1 = 118
-    if(reverseNumber(numResult) === numResult.toString()) { // '811' === '118' // FALSE
-      return numResult + ' - Palindrome';
-    } else {
-      // Not palindrome
-      return showPalindrome(numResult);
+    var numStr = num.toString();
+    var result = '';
+
+    for(var i = numStr.length -1; i >= 0; i--) {
+      result += numStr[i];
     }
+
+    if(result === num.toString()) {
+      return num;
+    } else {
+      return showPalindrome(num);
+    }
+
   }
 }
 
