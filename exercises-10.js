@@ -1,31 +1,27 @@
-// input: [2, 4, 6]
-// Process: (4 * 6) (2 * 6) (2 * 4)
-// output: [24, 12, 8]
-
 function perkalianUnik(arr) {
   var result = [];
-
-  var i = 0;
   var notI = 0;
-  var calculate = 1; // 1 * 4 = 4 * 6 = 24
 
-  // Nyari output indeks ke 0 dulu, yaitu 24
-  // while(i < arr.length) {
-  //
-  //   if(arr[i] === arr[notI]) { continue; }
-  //
-  //   calculate *= arr[i];
-  //   i++;
-  // }
-  // return calculate;
+  for(j = 0; j < arr.length; j++) {
 
-  for(i; i < arr.length; i++) {
-    if(arr[i] === arr[notI]) {continue;}
-    calculate *= arr[i];
+    var calculate = 1;
+
+    for(i = 0; i < arr.length; i++) {
+      if(arr[i] === arr[notI]) {continue;}
+      calculate *= arr[i];
+    }
+    notI++;
+    result.push(calculate);
   }
 
-  result.push(calculate);
+  return result;
 }
+
+// if(arr[i] !== arr[notI]) {
+//   calculate *= arr[i];
+//   i++;
+//   notI++;
+// }
 
 // TEST CASES
 console.log(perkalianUnik([2, 4, 6])); // [24, 12, 8]
